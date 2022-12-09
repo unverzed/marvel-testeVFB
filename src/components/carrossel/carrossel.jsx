@@ -1,6 +1,6 @@
 import { Nav, Card } from './style'
 import { AiOutlineLeftSquare, AiOutlineRightSquare } from 'react-icons/ai'
-import { useState, useEffect, useContext } from 'react'
+import { useState, useEffect } from 'react'
 import axios from 'axios'
 
 export default function Carrossel() {
@@ -15,9 +15,7 @@ export default function Carrossel() {
     )
     promise.then((response) => {
       setHeros(response.data.data.results)
-      //console.log('eu sou o hero', response.data.data.results)
       console.log(heros)
-      //console.log(response.data.data.results)
     })
     promise.catch((error) => {
       console.log(error)

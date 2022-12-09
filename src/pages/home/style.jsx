@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import banner from '../../assets/banner.jpg'
 
 const Banner = styled.div`
   width: 100vw;
