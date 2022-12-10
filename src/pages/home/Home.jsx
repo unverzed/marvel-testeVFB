@@ -5,6 +5,7 @@ import { Banner } from './style'
 import AllCharacters from '../../components/allcaracters/allcaracters'
 import Footer from '../../components/footer/footer'
 import NewsLetter from '../../components/newsletter/newsletter'
+import Card from '../../marvelcard/card'
 
 export default function Home() {
   return (
@@ -18,7 +19,8 @@ export default function Home() {
       </Banner>
       <Carrossel />
       <AllCharacters />
-      <NewsLetter/>
+      <Card />
+      <NewsLetter />
       <Footer />
     </>
   )

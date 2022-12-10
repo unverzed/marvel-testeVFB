@@ -6,6 +6,7 @@ const Section = styled.section`
   background: #000000 0% 0% no-repeat padding-box;
   display: flex;
   justify-content: center;
+  margin-top: 150px;
 
   .red {
     width: 408px;
