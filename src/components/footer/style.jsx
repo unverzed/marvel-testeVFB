@@ -4,8 +4,6 @@ const Bottom = styled.footer`
   width: 100vw;
   height: 270px;
   background: #222222 0% 0% no-repeat padding-box;
-  position: fixed;
-  bottom: 0px;
   display: flex;
   align-items: center;
   justify-content: space-around;
