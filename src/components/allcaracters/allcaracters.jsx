@@ -14,7 +14,7 @@ export default function AllCharacters() {
     )
     promise.then((response) => {
       setHeros(response.data.data.results)
-      console.log(heros)
+      console.log(response.data.data.results)
     })
     promise.catch((error) => {
       console.log(error)

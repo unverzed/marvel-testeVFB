@@ -3,6 +3,7 @@ import Carrossel from '../../components/carrossel/carrossel'
 import topbanner from '../../assets/banner.jpg'
 import { Banner } from './style'
 import AllCharacters from '../../components/allcaracters/allcaracters'
+import Footer from '../../components/footer/footer'
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       </Banner>
       <Carrossel />
       <AllCharacters />
+      <Footer />
     </>
   )
 }

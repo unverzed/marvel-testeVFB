@@ -9,13 +9,14 @@ export default function Carrossel() {
   const timeStamp = '1670619895'
   const publicKey = '870c7a5f642ead24f996d96b3feaf2f3'
 
+
   useEffect(() => {
     const promise = axios.get(
       `https://gateway.marvel.com:443/v1/public/characters?ts=${timeStamp}&apikey=${publicKey}&hash=${md5}&limit=6`,
     )
     promise.then((response) => {
       setHeros(response.data.data.results)
-      console.log(heros)
+      console.log(response.data.data.results)
     })
     promise.catch((error) => {
       console.log(error)
@@ -33,6 +34,7 @@ export default function Carrossel() {
       </div>
       <div className="all-cards">
         {heros.map((hero) => {
+        
           return (
             <Card key={hero.id}>
               <img
