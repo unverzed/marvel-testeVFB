@@ -29,7 +29,6 @@ const Main = styled.main`
     gap: 30px;
     align-items: center;
     justify-content: center;
-    background-color: #000000;
     padding-left: 85px;
     height: 100%;
     align-content: flex-start;

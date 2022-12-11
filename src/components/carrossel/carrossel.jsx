@@ -4,7 +4,13 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 
 export default function Carrossel() {
-  const [heros, setHeros] = useState([])
+  const [spider, setSpider] = useState([])
+  const [widow, setWidow] = useState([])
+  const [hulk, setHulk] = useState([])
+  const [thor, setThor] = useState([])
+  const [panther, setPanther] = useState([])
+  const [thanos, setThanos] = useState([])
+  const [iron, setIron] = useState([])
 
   const md5 = 'b32f6e8bc2d4f0ed4fd27d999af9d3c4'
   const timeStamp = '1670619895'
@@ -15,20 +21,54 @@ export default function Carrossel() {
     '1009351',
     '1009664',
     '1009187',
+    '1009652',
     '1009368',
   ]
 
   useEffect(() => {
-    const promise = axios.get(
-      `https://gateway.marvel.com:443/v1/public/characters/1009351?ts=${timeStamp}&apikey=${publicKey}&hash=${md5}&limit=100`,
+    const promise1 = axios.get(
+      `https://gateway.marvel.com:443/v1/public/characters/${item[0]}?ts=${timeStamp}&apikey=${publicKey}&hash=${md5}`,
     )
-    promise.then((response) => {
-      setHeros(response.data.data.results)
-      console.log(response.data.data.results)
-    })
-    promise.catch((error) => {
-      console.log(error)
-    })
+    const promise2 = axios.get(
+      `https://gateway.marvel.com:443/v1/public/characters/${item[1]}?ts=${timeStamp}&apikey=${publicKey}&hash=${md5}`,
+    )
+    const promise3 = axios.get(
+      `https://gateway.marvel.com:443/v1/public/characters/${item[2]}?ts=${timeStamp}&apikey=${publicKey}&hash=${md5}`,
+    )
+    const promise4 = axios.get(
+      `https://gateway.marvel.com:443/v1/public/characters/${item[3]}?ts=${timeStamp}&apikey=${publicKey}&hash=${md5}`,
+    )
+    const promise5 = axios.get(
+      `https://gateway.marvel.com:443/v1/public/characters/${item[4]}?ts=${timeStamp}&apikey=${publicKey}&hash=${md5}`,
+    )
+    const promise6 = axios.get(
+      `https://gateway.marvel.com:443/v1/public/characters/${item[5]}?ts=${timeStamp}&apikey=${publicKey}&hash=${md5}`,
+    )
+    const promise7 = axios.get(
+      `https://gateway.marvel.com:443/v1/public/characters/${item[6]}?ts=${timeStamp}&apikey=${publicKey}&hash=${md5}`,
+    )
+
+    Promise.all([
+      promise1,
+      promise2,
+      promise3,
+      promise4,
+      promise5,
+      promise6,
+      promise7,
+    ])
+      .then((response) => {
+        setSpider(response[0].data.data.results)
+        setWidow(response[1].data.data.results)
+        setHulk(response[2].data.data.results)
+        setThor(response[3].data.data.results)
+        setPanther(response[4].data.data.results)
+        setThanos(response[5].data.data.results)
+        setIron(response[6].data.data.results)
+      })
+      .catch((error) => {
+        console.log(error)
+      })
   }, [])
 
   return (
@@ -41,19 +81,89 @@ export default function Carrossel() {
         </div>
       </div>
       <div className="all-cards">
-        {heros
-          .filter((item) => item.name ===  1014858 || item.id === 1009189)
-          .map((item) => {
-            return (
-              <Card key={item.id}>
-                <img
-                  src={`${item.thumbnail.path}.${item.thumbnail.extension}`}
-                  alt=""
-                />
-                <span>{item.name}</span>
-              </Card>
-            )
-          })}
+        {spider.map((item) => {
+          return (
+            <Card key={item.id}>
+              <img
+                src={`${item.thumbnail.path}.${item.thumbnail.extension}`}
+                alt=""
+              />
+              <span>{item.name}</span>
+            </Card>
+          )
+        })}
+
+        {widow.map((item) => {
+          return (
+            <Card key={item.id}>
+              <img
+                src={`${item.thumbnail.path}.${item.thumbnail.extension}`}
+                alt=""
+              />
+              <span>{item.name}</span>
+            </Card>
+          )
+        })}
+
+        {hulk.map((item) => {
+          return (
+            <Card key={item.id}>
+              <img
+                src={`${item.thumbnail.path}.${item.thumbnail.extension}`}
+                alt=""
+              />
+              <span>{item.name}</span>
+            </Card>
+          )
+        })}
+
+        {thor.map((item) => {
+          return (
+            <Card key={item.id}>
+              <img
+                src={`${item.thumbnail.path}.${item.thumbnail.extension}`}
+                alt=""
+              />
+              <span>{item.name}</span>
+            </Card>
+          )
+        })}
+
+        {panther.map((item) => {
+          return (
+            <Card key={item.id}>
+              <img
+                src={`${item.thumbnail.path}.${item.thumbnail.extension}`}
+                alt=""
+              />
+              <span>{item.name}</span>
+            </Card>
+          )
+        })}
+
+        {thanos.map((item) => {
+          return (
+            <Card key={item.id}>
+              <img
+                src={`${item.thumbnail.path}.${item.thumbnail.extension}`}
+                alt=""
+              />
+              <span>{item.name}</span>
+            </Card>
+          )
+        })}
+
+        {iron.map((item) => {
+          return (
+            <Card key={item.id}>
+              <img
+                src={`${item.thumbnail.path}.${item.thumbnail.extension}`}
+                alt=""
+              />
+              <span>{item.name}</span>
+            </Card>
+          )
+        })}
       </div>
     </Nav>
   )
