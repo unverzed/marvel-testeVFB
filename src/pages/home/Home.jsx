@@ -8,6 +8,7 @@ import NewsLetter from '../../components/newsletter/newsletter'
 import Card from '../../marvelcard/card'
 
 export default function Home() {
+  
   return (
     <>
       <Header />

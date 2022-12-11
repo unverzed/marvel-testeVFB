@@ -8,6 +8,11 @@ const Section = styled.section`
   justify-content: center;
   margin-top: 150px;
 
+  @media (max-width: 500px) {
+      height: 300px;
+      margin-top: 0px;
+    }
+
   .red {
     width: 408px;
     height: 329px;
@@ -16,6 +21,10 @@ const Section = styled.section`
     align-items: center;
     justify-content: center;
     margin-top: -103px;
+
+    @media (max-width: 500px) {
+      display: none;
+    }
   }
 
   p {
@@ -23,6 +32,10 @@ const Section = styled.section`
     color: #ffffff;
     font-family: 'Oswald', Arial, Helvetica, sans-serif;
     font-weight: 600;
+
+    @media (max-width: 500px) {
+      font-size: 15px;
+    }
   }
 
   p span {
@@ -34,6 +47,10 @@ const Section = styled.section`
     flex-direction: column;
     margin-top: 50px;
     margin-left: 72px;
+
+    @media (max-width: 500px) {
+      margin-left: 0px;
+    }
   }
 
   .news p span {
@@ -50,6 +67,11 @@ const Section = styled.section`
     background: #ffffff 0% 0% no-repeat padding-box;
     border: 1px solid #f2f2f2;
     border: none;
+
+    @media (max-width: 500px) {
+      width: 200px;
+
+    }
   }
 
   button {
@@ -62,6 +84,7 @@ const Section = styled.section`
     font-family: 'Open Sans', Arial, Helvetica, sans-serif;
     font-weight: 600;
     font-size: 14px;
+    
   }
 
   label {

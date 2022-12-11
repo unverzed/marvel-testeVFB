@@ -4,15 +4,25 @@ const Head = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  width: 100vw;
   background-color: #000000;
   height: 105px;
   opacity: 1;
+
+  @media (max-width: 500px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
   img {
     width: 138px;
     height: 62px;
     margin-left: 22.32px;
+
+    @media (max-width: 500px) {
+    margin-left: 0px;
+  }
   }
 
   p {
@@ -29,6 +39,10 @@ const Head = styled.header`
     flex-direction: row;
     gap: 19px;
     margin-right: 36px;
+
+    @media (max-width: 500px) {
+        display: none;
+  }
   }
 
   a {

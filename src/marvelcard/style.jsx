@@ -6,9 +6,22 @@ const MarvelCard = styled.section`
   flex-direction: column;
   align-items: center;
 
+  @media (max-width: 500px) {
+      margin-top: calc(1400px + 200px);
+    }
+
   img {
     width: 1016px;
     height: 180px;
+
+    @media (max-width: 500px) {
+      width: 90%;
+      height: 200px;
+    }
+
+    @media (max-width: 400px) {
+      height: 150px;
+    }
   }
 
   h1 {
@@ -17,6 +30,11 @@ const MarvelCard = styled.section`
     color: #000000;
     font-weight: 600;
     margin-bottom: 30px;
+
+    @media (max-width: 500px) {
+      text-align: center;
+    }
+
   }
 
   span {

@@ -1,6 +1,7 @@
 import { Main, Card } from './style'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import SearchBar from '../search/search'
 
 export default function AllCharacters() {
   const [heros, setHeros] = useState([])
@@ -21,20 +22,28 @@ export default function AllCharacters() {
     })
   }, [])
 
+
   return (
     <Main>
-      <h3>LISTA DE PERSONAGENS DA MARVEL</h3>
+     <SearchBar/>
+      <div className="title">
+        <h3>LISTA DE PERSONAGENS DA MARVEL</h3>
+      </div>
       <div className="all-caracters">
-        {heros.map((hero) => {
-          return (
-            <Card key={hero.id}>
-              <img src={`${hero.thumbnail.path}.${hero.thumbnail.extension}`} />
-              <div className="hero-name">
-                <span>{hero.name}</span>
-              </div>
-            </Card>
-          )
-        })}
+        <div className="character">
+          {heros.map((hero) => {
+            return (
+              <Card key={hero.id}>
+                <img
+                  src={`${hero.thumbnail.path}.${hero.thumbnail.extension}`}
+                />
+                <div className="hero-name">
+                  <span>{hero.name}</span>
+                </div>
+              </Card>
+            )
+          })}
+        </div>
       </div>
     </Main>
   )

@@ -16,6 +16,14 @@ const Banner = styled.div`
     letter-spacing: 0px;
     color: #ffffff;
     font-weight: bold;
+
+    @media (max-width: 800px) {
+      font-size: 100px;
+    }
+
+    @media (max-width: 500px) {
+      font-size: 50px;
+    }
   }
 
   h1::after {
@@ -27,6 +35,13 @@ const Banner = styled.div`
     width: 592px;
     height: 418px;
     margin-left: 135px;
+
+    @media (max-width: 500px) {
+     margin-left: 0px;
+     height: 100px;
+    }
+
+    
   }
 `
 export { Banner }

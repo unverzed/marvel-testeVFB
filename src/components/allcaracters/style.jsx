@@ -3,7 +3,7 @@ import styled from 'styled-components'
 const Main = styled.main`
   background-color: #ffffff;
   width: 100vw;
-  height: 2500px;
+  height: 3000px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,17 +15,46 @@ const Main = styled.main`
     font-size: 28px;
     font-family: 'Oswald', Arial, Helvetica, sans-serif;
     font-weight: 600;
+
+    @media (max-width: 500px) {
+      margin-left: 5px;
+      margin-top: 30px;
+    }
   }
 
   .all-caracters {
-    width: 60%;
-    margin-left: 134px;
-    margin-right: 135px;
+    width: 100vw;
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
     align-items: center;
     justify-content: center;
+    background-color: #000000;
+    padding-left: 85px;
+    height: 100%;
+    align-content: flex-start;
+
+    @media (max-width: 500px) {
+      padding-left: 0px;
+    }
+
+  }
+
+  .title {
+    width: 100%;
+  }
+
+  .character {
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    @media (max-width: 500px) {
+      width: 100%;
+      justify-content: center;
+      overflow-y: auto;
+    }
 
   }
 `

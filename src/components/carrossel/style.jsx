@@ -15,13 +15,25 @@ const Nav = styled.nav`
     font-family: 'Oswald', Arial, Helvetica, sans-serif;
     font-weight: bold;
     margin-left: 135px;
+
+    @media (max-width: 500px) {
+      font-size: 30px;
+      margin-left: 5px;
+    }
   }
 
   .all-cards {
     display: flex;
-    margin-left: 135px;
     margin-top: 39px;
     gap: 30.87px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    margin-left: 134px;
+
+    @media (max-width: 500px) {
+      margin-left: 0px;
+      gap: 5px;
+    }
   }
 
   .nav-title {
@@ -39,14 +51,24 @@ const Nav = styled.nav`
   .nav-icons {
     margin-right: 135px;
     gap: 10px;
+
+    @media (max-width: 500px) {
+      display: flex;
+      gap: 5px;
+      margin-right: 5px;
+    }
   }
 `
 
 const Card = styled.section`
   width: 239px;
   height: 272px;
-  background-color: purple;
-  position:relative;
+  position: relative;
+
+  @media (max-width: 500px) {
+    width: 200px;
+    width: 200px;
+  }
 
   section::before {
     z-index: -1;
@@ -56,6 +78,13 @@ const Card = styled.section`
     width: 239px;
     height: 272px;
     border-bottom: 4px solid #ed1b24;
+
+    @media (max-width: 500px) {
+      width: 200px;
+      height: 200px;
+    }
+
+  
   }
 
   span {
