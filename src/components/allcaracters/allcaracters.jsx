@@ -6,26 +6,21 @@ import SearchBar from '../search/search'
 export default function AllCharacters() {
   const [heros, setHeros] = useState([])
   const [totalHeros, setTotalHeros] = useState([])
-  const [itemsPerPage, setItemsPerPage] = useState(30) //itens por página
-  const [currentPage, setCurrentPage] = useState(0) //página atual
-  const [offset, setOffset] = useState(0) //offseat muda de 30 em 30
+  const itemsPerPage = 30
+  const pages = Math.ceil(totalHeros / itemsPerPage)
+  const MAX_ITEMS = 5
 
-  const pages = Math.ceil(totalHeros / itemsPerPage) //ceil arredonda pra cima
-  const startIndex = currentPage * itemsPerPage
-  const endIndex = startIndex + itemsPerPage
-  const currentItens = heros.slice(startIndex, endIndex)
-
-  const md5 = 'b32f6e8bc2d4f0ed4fd27d999af9d3c4'
-  const timeStamp = '1670619895'
-  const publicKey = '870c7a5f642ead24f996d96b3feaf2f3'
+  const md5 = '89890b302c504406d6c498bc3577bcc0'
+  const timeStamp = '1670870440772'
+  const publicKey = '8f731291bab506048d8010b0d4fce0d3'
 
   useEffect(() => {
-    getAllHeros()
-  }, [offset])
+    getAllHeros(0)
+  }, [])
 
-  function getAllHeros() {
+  function getAllHeros(offset) {
     const promise = axios.get(
-      `https://gateway.marvel.com:443/v1/public/characters?ts=${timeStamp}&apikey=${publicKey}&hash=${md5}&limit=100i&offset=${offset}`,
+      `https://gateway.marvel.com:443/v1/public/characters?ts=${timeStamp}&apikey=${publicKey}&hash=${md5}&limit=${itemsPerPage}&offset=${offset}`,
     )
     promise.then((response) => {
       setHeros(response.data.data.results)
@@ -39,11 +34,9 @@ export default function AllCharacters() {
   }
 
   function nextPage(e) {
-    setCurrentPage(Number(e.target.value))
-    const newOffset = (e.selected * itemsPerPage) % heros.length
-    setOffset(newOffset)
-    console.log(Number(newOffset))
-  
+    getAllHeros(Number(e.target.value) * itemsPerPage)
+
+    console.log('target', e.target.value)
   }
 
   return (
@@ -54,7 +47,7 @@ export default function AllCharacters() {
       </div>
       <div className="all-caracters">
         <div className="character">
-          {currentItens.map((hero) => {
+          {heros.map((hero) => {
             return (
               <Card key={hero.id}>
                 <img
@@ -67,13 +60,11 @@ export default function AllCharacters() {
             )
           })}
         </div>
-        {Array.from(Array(pages), (item, index) => {
-          return (
-            <button value={index} onClick={nextPage}>
-              {index + 1}
-            </button>
-          )
-        })}
+        {Array.from({ length: MAX_ITEMS })
+          .map((_, index) => index + 1)
+          .map((page) => (
+            <button value={page} onClick={(e) => nextPage(e)}>{page}</button>
+          ))}
       </div>
     </Main>
   )

@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 const MarvelCard = styled.section`
   display: flex;
+  width: 100vw;
   flex-direction: column;
   flex-direction: column;
   align-items: center;

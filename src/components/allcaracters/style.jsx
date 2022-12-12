@@ -56,6 +56,10 @@ const Main = styled.main`
     }
 
   }
+
+  .buttons {
+    display: flex;
+  }
 `
 
 const Card = styled.section`
