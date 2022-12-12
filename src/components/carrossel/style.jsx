@@ -29,12 +29,17 @@ const Nav = styled.nav`
     overflow-x: auto;
     scroll-behavior: smooth;
     margin-left: 134px;
+    margin-right: 134px;
 
     @media (max-width: 500px) {
       margin-left: 0px;
       gap: 5px;
     }
   }
+
+  .all-cards::-webkit-scrollbar {
+      display: none;
+    }
 
   .nav-title {
     display: flex;

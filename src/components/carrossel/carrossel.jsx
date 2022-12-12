@@ -1,9 +1,10 @@
 import { Nav, Card } from './style'
 import { AiOutlineLeftSquare, AiOutlineRightSquare } from 'react-icons/ai'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import axios from 'axios'
 
 export default function Carrossel() {
+  const carousel = useRef(null);
   const [spider, setSpider] = useState([])
   const [widow, setWidow] = useState([])
   const [hulk, setHulk] = useState([])
@@ -71,16 +72,28 @@ export default function Carrossel() {
       })
   }, [])
 
+  const handleLeftClick = (e) => {
+    e.preventDefault();
+    carousel.current.scrollLeft -= carousel.current.offsetWidth;
+    console.log(carousel.current.offsetWidth)
+  };
+
+  const handleRightClick = (e) => {
+    e.preventDefault();
+
+    carousel.current.scrollLeft += carousel.current.offsetWidth;
+  };
+
   return (
     <Nav>
       <div className="nav-title">
         <h2>PERSONAGENS EM DESTAQUE</h2>
         <div className="nav-icons">
-          <AiOutlineLeftSquare className="navigation" />
-          <AiOutlineRightSquare className="navigation" />
+          <AiOutlineLeftSquare className="navigation" onClick={handleLeftClick} />
+          <AiOutlineRightSquare className="navigation" onClick={handleRightClick}/>
         </div>
       </div>
-      <div className="all-cards">
+      <div className="all-cards" ref={carousel}>
         {spider.map((item) => {
           return (
             <Card key={item.id}>
