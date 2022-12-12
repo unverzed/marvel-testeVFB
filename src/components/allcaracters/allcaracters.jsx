@@ -6,7 +6,14 @@ import SearchBar from '../search/search'
 export default function AllCharacters() {
   const [heros, setHeros] = useState([])
   const [totalHeros, setTotalHeros] = useState([])
-  const [offset, pageOffset] = useState(0)
+  const [itemsPerPage, setItemsPerPage] = useState(30) //itens por página
+  const [currentPage, setCurrentPage] = useState(0) //página atual
+  const [offset, setOffset] = useState(0) //offseat muda de 30 em 30
+
+  const pages = Math.ceil(totalHeros / itemsPerPage) //ceil arredonda pra cima
+  const startIndex = currentPage * itemsPerPage
+  const endIndex = startIndex + itemsPerPage
+  const currentItens = heros.slice(startIndex, endIndex)
 
   const md5 = 'b32f6e8bc2d4f0ed4fd27d999af9d3c4'
   const timeStamp = '1670619895'
@@ -23,10 +30,20 @@ export default function AllCharacters() {
     promise.then((response) => {
       setHeros(response.data.data.results)
       setTotalHeros(response.data.data.total)
+      console.log(response.data.data.total)
+      console.log(response.data.data.results)
     })
     promise.catch((error) => {
       console.log(error)
     })
+  }
+
+  function nextPage(e) {
+    setCurrentPage(Number(e.target.value))
+    const newOffset = (e.selected * itemsPerPage) % heros.length
+    setOffset(newOffset)
+    console.log(Number(newOffset))
+  
   }
 
   return (
@@ -37,7 +54,7 @@ export default function AllCharacters() {
       </div>
       <div className="all-caracters">
         <div className="character">
-          {heros.map((hero) => {
+          {currentItens.map((hero) => {
             return (
               <Card key={hero.id}>
                 <img
@@ -50,6 +67,13 @@ export default function AllCharacters() {
             )
           })}
         </div>
+        {Array.from(Array(pages), (item, index) => {
+          return (
+            <button value={index} onClick={nextPage}>
+              {index + 1}
+            </button>
+          )
+        })}
       </div>
     </Main>
   )
