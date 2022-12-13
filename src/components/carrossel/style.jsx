@@ -18,7 +18,7 @@ const Nav = styled.nav`
 
     @media (max-width: 500px) {
       font-size: 30px;
-      margin-left: 5px;
+      margin-left: 10px;
     }
   }
 
@@ -32,7 +32,8 @@ const Nav = styled.nav`
     margin-right: 134px;
 
     @media (max-width: 500px) {
-      margin-left: 0px;
+      margin-left: 5px;
+      margin-right: 5px;
       gap: 5px;
     }
   }

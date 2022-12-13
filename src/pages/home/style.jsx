@@ -17,12 +17,9 @@ const Banner = styled.div`
     color: #ffffff;
     font-weight: bold;
 
-    @media (max-width: 800px) {
-      font-size: 100px;
-    }
-
     @media (max-width: 500px) {
       font-size: 50px;
+      margin-left: 15px;
     }
   }
 

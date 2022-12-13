@@ -74,6 +74,10 @@ const Section = styled.section`
     }
   }
 
+  input::placeholder {
+    padding-left: 21px;
+  }
+
   button {
     width: 120px;
     height: 61px;

@@ -4,12 +4,8 @@ const MarvelCard = styled.section`
   display: flex;
   width: 100vw;
   flex-direction: column;
-  flex-direction: column;
   align-items: center;
-
-  @media (max-width: 500px) {
-      margin-top: calc(1400px + 200px);
-    }
+  margin-top: 150px;
 
   img {
     width: 1016px;

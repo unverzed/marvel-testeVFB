@@ -3,17 +3,9 @@ import styled from 'styled-components'
 const Main = styled.main`
   background-color: #ffffff;
   width: 100vw;
-  height: 2000px;
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  @media (max-width: 500px) {
-      height: 3000px;
-     
-    }
-
-
 
   h3 {
     margin-top: 147px;

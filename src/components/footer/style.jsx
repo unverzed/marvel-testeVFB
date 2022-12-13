@@ -6,11 +6,23 @@ const Bottom = styled.footer`
   background: #222222 0% 0% no-repeat padding-box;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
 
   @media (max-width: 500px) {
     justify-content: center;
     height: 200px;
+  }
+
+  .logo {
+    width: 44px;
+    height: 67px;
+  }
+
+  .first-infos,
+  .last-infos {
+    display: flex;
+    gap: 50px;
+    width: 30%;
   }
 
   ul,
@@ -76,6 +88,7 @@ const Bottom = styled.footer`
   .social-medias {
     display: flex;
     flex-direction: column;
+    align-items: center;
 
     @media (max-width: 500px) {
       align-items: center;
@@ -96,13 +109,13 @@ const Bottom = styled.footer`
 
   .medias {
     flex-direction: row;
+    width: 100%;
+    display: flex;
     gap: 17.34px;
+    justify-content: center;
 
     @media (max-width: 500px) {
-      width: 100%;
-      display: flex;
       gap: 10px;
-      justify-content: center;
     }
   }
 `
