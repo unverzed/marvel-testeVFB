@@ -83,14 +83,8 @@ const Card = styled.section`
     width: 239px;
     height: 272px;
     border-bottom: 4px solid #ed1b24;
-    background-image: linear-gradient(120deg, #000000, #000000);
-    
    
-
-    img::after {
-      background-image: linear-gradient(120deg, #e0c3fc, #8ec5fc);
-    }
-
+    
     @media (max-width: 500px) {
       width: 200px;
     }
