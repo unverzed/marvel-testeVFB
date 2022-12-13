@@ -26,10 +26,10 @@ const Nav = styled.nav`
     display: flex;
     margin-top: 39px;
     gap: 30.87px;
-    overflow-x: auto;
     scroll-behavior: smooth;
     margin-left: 134px;
     margin-right: 134px;
+    overflow: hidden;
 
     @media (max-width: 500px) {
       margin-left: 5px;

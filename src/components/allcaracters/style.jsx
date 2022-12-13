@@ -6,6 +6,7 @@ const Main = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
+   overflow-x: hidden;
 
   h3 {
     margin-top: 147px;

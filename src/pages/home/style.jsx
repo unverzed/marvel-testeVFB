@@ -5,6 +5,7 @@ const Banner = styled.div`
   display: flex;
   flex-direction: column-reverse;
   background: #000000 0% 0% no-repeat padding-box;
+  overflow-x: hidden;
 
   img {
     opacity: 0.6;
