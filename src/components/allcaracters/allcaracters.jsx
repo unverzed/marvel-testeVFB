@@ -7,13 +7,12 @@ export default function AllCharacters() {
   const [heros, setHeros] = useState([])
   const [totalHeros, setTotalHeros] = useState([])
   const itemsPerPage = 30
-  let current = 0;
   const pages = Math.ceil(totalHeros / itemsPerPage)
   const MAX_ITEMS = 10
 
-  const md5 = '89890b302c504406d6c498bc3577bcc0'
-  const timeStamp = '1670870440772'
-  const publicKey = '8f731291bab506048d8010b0d4fce0d3'
+  const md5 = 'b32f6e8bc2d4f0ed4fd27d999af9d3c4'
+  const timeStamp = '1670619895'
+  const publicKey = '870c7a5f642ead24f996d96b3feaf2f3'
 
   useEffect(() => {
     getAllHeros(0)
@@ -26,8 +25,6 @@ export default function AllCharacters() {
     promise.then((response) => {
       setHeros(response.data.data.results)
       setTotalHeros(response.data.data.total)
-      console.log(response.data.data.total)
-      console.log(response.data.data.results)
     })
     promise.catch((error) => {
       console.log(error)
@@ -37,10 +34,6 @@ export default function AllCharacters() {
   function nextPage(e) {
     getAllHeros(Number(e.target.value) * itemsPerPage)
 
-    current = e.target.value
-    //setCurrentItems(e.target.value)
-    console.log("page", current)
-    console.log('target', e.target.value)
   }
 
   return (

@@ -21,7 +21,7 @@ const Search = styled.section`
 
 
   .search-response {
-    width: 500px;
+    width: 100%;
     height: 100%;
     font-size: 20px;
     gap: 10px;
