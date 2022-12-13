@@ -9,17 +9,21 @@ export default function Footer() {
   return (
     <Bottom>
       <ul>
+        <div>
         <li className="list-title">A Marvel</li>
         <li>Sobre a Marvel</li>
         <li>Ajuda</li>
         <li>Carreiras</li>
+        </div>
       </ul>
       <ul>
+        <div>
         <li className="list-title">Mídia</li>
         <li>Filmes</li>
         <li>Quadrinhos</li>
         <li>Programas de TV</li>
         <li>Jogos</li>
+        </div>
       </ul>
       <article>
         <h1>Última do Blog</h1>

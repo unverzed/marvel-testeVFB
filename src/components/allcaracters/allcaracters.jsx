@@ -7,8 +7,9 @@ export default function AllCharacters() {
   const [heros, setHeros] = useState([])
   const [totalHeros, setTotalHeros] = useState([])
   const itemsPerPage = 30
+  let current = 0;
   const pages = Math.ceil(totalHeros / itemsPerPage)
-  const MAX_ITEMS = 5
+  const MAX_ITEMS = 10
 
   const md5 = '89890b302c504406d6c498bc3577bcc0'
   const timeStamp = '1670870440772'
@@ -36,6 +37,9 @@ export default function AllCharacters() {
   function nextPage(e) {
     getAllHeros(Number(e.target.value) * itemsPerPage)
 
+    current = e.target.value
+    //setCurrentItems(e.target.value)
+    console.log("page", current)
     console.log('target', e.target.value)
   }
 
@@ -60,11 +64,15 @@ export default function AllCharacters() {
             )
           })}
         </div>
-        {Array.from({ length: MAX_ITEMS })
-          .map((_, index) => index + 1)
-          .map((page) => (
-            <button value={page} onClick={(e) => nextPage(e)}>{page}</button>
-          ))}
+        <div className="pagination">
+          {Array.from({ length: MAX_ITEMS })
+            .map((_, index) => index + 1)
+            .map((page) => (
+              <button value={page} onClick={(e) => nextPage(e)}>
+                {page}
+              </button>
+            ))}
+        </div>
       </div>
     </Main>
   )

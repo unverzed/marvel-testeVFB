@@ -3,10 +3,17 @@ import styled from 'styled-components'
 const Main = styled.main`
   background-color: #ffffff;
   width: 100vw;
-  height: 3000px;
+  height: 2000px;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (max-width: 500px) {
+      height: 3000px;
+     
+    }
+
+
 
   h3 {
     margin-top: 147px;
@@ -19,6 +26,7 @@ const Main = styled.main`
     @media (max-width: 500px) {
       margin-left: 5px;
       margin-top: 30px;
+     
     }
   }
 
@@ -26,17 +34,16 @@ const Main = styled.main`
     width: 100vw;
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     gap: 30px;
     align-items: center;
-    justify-content: center;
-    padding-left: 85px;
+    justify-content: flex-start;
     height: 100%;
     align-content: flex-start;
 
     @media (max-width: 500px) {
       padding-left: 0px;
     }
-
   }
 
   .title {
@@ -48,17 +55,34 @@ const Main = styled.main`
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
+    justify-content: center;
 
     @media (max-width: 500px) {
       width: 100%;
-      justify-content: center;
-      overflow-y: auto;
     }
-
   }
 
   .buttons {
     display: flex;
+  }
+
+  .pagination {
+    display: flex;
+    gap: 5px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px
+  }
+
+  button {
+    width: 32px;
+    height: 32px;
+    border: none;
+  }
+
+  .button__active {
+    background-color: red;
   }
 `
 

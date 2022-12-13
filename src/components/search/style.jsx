@@ -18,6 +18,8 @@ const Form = styled.form`
 `
 
 const Search = styled.section`
+
+
   .search-response {
     width: 500px;
     height: 100%;
@@ -26,6 +28,7 @@ const Search = styled.section`
     font-size: 20px;
     display: flex;
     flex-direction: column;
+    align-items: flex-end;
   }
 
   .character {

@@ -83,6 +83,12 @@ const Bottom = styled.footer`
     }
   }
 
+  ul > div {
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+  }
+
   .social-medias img {
     width: 24px;
     height: 24px;
